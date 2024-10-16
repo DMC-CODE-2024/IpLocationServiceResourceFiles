@@ -29,8 +29,10 @@ CREATE TABLE if not exists ip_location_country_ipv6 (
   PRIMARY KEY (id)
 );
 
-insert into sys_param (description, tag, value, feature_name) values('The URL used to download IP location dump.', 'ipLocationDumpFileURL', 'https://www.ip2location.com/download?token=<token>\\&file=<code>', 'Ip Location Processor'  );
+insert into sys_param (description, tag, value, feature_name) values ( 'The key used for api call to ip location database to query country for an IP.', 'ipCountryApiKey', '63E2F05CC085E319664B99D6AB5D4426', 'Ip location' );
+insert into sys_param (description, tag, value, feature_name) values ( 'The url used for api call to ip location database to query country for an IP.', 'ipCountryApiUrl', 'https://api.ip2location.io/?key=<key>&ip=<ip>&format=json', 'Ip location' );
 
+insert into sys_param (description, tag, value, feature_name) values('The URL used to download IP location dump.', 'ipLocationDumpFileURL', 'https://www.ip2location.com/download?token=<token>\\&file=<code>', 'Ip Location Processor'  );
 insert into sys_param (description, tag, value, feature_name) values( 'The code used to download ipv4 ip location dump.', 'ipLocationCodeipv4', 'DB1', 'Ip Location Processor' );
 insert into sys_param (description, tag, value, feature_name) values( 'The code used to download ipv6 ip location dump', 'ipLocationCodeipv6', 'DB1IPV6', 'Ip Location Processor' );
 insert into sys_param (description, tag, value, feature_name) values( 'The tag is used to store the last processed date for ip location processor for ip-type ipv6.', 'last_process_date_ip_location_ipv6', '', 'Ip Location Processor');
