@@ -165,11 +165,13 @@ EOFMYSQL
     inputFilePath="${inputFilePath/<ipType>/$ipType}"
     processedFilePath="${processedFilePath/<ipType>/$ipType}"
     deltaFileProcessedPath="${deltaFileProcessedPath/<ipType>/$ipType}"
+    errorFileProcessedPath="${errorFileProcessedPath/<ipType>/$ipType}"
 
     mkdir -p $inputFilePath
     mkdir -p $processedFilePath
     mkdir -p $deltaFileProcessedPath
-    
+    mkdir -p $errorFileProcessedPath
+     
     deltaFilePath=$inputFilePath
     executionStartTime=$(date +%s.%N)
 
