@@ -348,6 +348,11 @@ EOFMYSQL
     fi
     log_message "Starting java code $javaFeatureName"
 
+        mv $outputFileDeletion $deltaFileProcessedPath
+        log_message "Moved file ${outputFileDeletion} to $deltaFileProcessedPath."
+        mv $outputFileAddition $deltaFileProcessedPath
+        log_message "Moved file $outputFileAddition to $deltaFileProcessedPath."
+   
     cd $javaProcessPath
     log_path="${LOG_HOME}/${module_name}_module/${ipType}/"
     mkdir -p $log_path
