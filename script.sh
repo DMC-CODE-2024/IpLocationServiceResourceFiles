@@ -50,8 +50,7 @@ build="${module_name}.jar"
       executionTime=$(echo "$executionFinishTime - $executionStartTime" | bc)
       secondDivision=1000
       finalExecutionTime=`echo "$executionTime * $secondDivision" | bc`
-    #  echo $finalExecutionTime
-  #    echo $dbIp $dbPort $dbUsername $dbPassword $auddbName
+ 
       mysqlOutput=$(mysql -h$dbIp -P$dbPort -u$dbUsername -p${dbPassword} $auddbName -se "update modules_audit_trail
       set status_code='501',status='FAIL',error_message='$errMsg',
       execution_time='$finalExecutionTime',modified_on=CURRENT_TIMESTAMP where module_name='$moduleName'
@@ -185,8 +184,8 @@ EOFMYSQL
     
     log_message "The server host name is: $serverName"
     # Reading password from the config file.
-    log_message "Retrieving password for database connection."
-    dbPassword=$(java -jar $encryptorPath spring.datasource.password)
+    log_message "Retrieving  details for database connection."
+    dbPassword=$(java -jar $pass_dypt spring.datasource.password)
 
     if [ -z "$dbIp" ] || [ -z "$dbPort" ] || [ -z "$dbUsername" ] || [ -z "$dbPassword" ] ;
       then
