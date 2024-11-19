@@ -1,6 +1,6 @@
 source ~/.bash_profile
 source $commonConfigurationFilePath
-dbDecryptPassword=$(java -jar  ${APP_HOME}/encryption_utility/PasswordDecryptor-0.1.jar spring.datasource.password)
+dbDecryptPassword=$(java -jar  ${pass_dypt} spring.datasource.password)
 
 mysql  -h$dbIp -P$dbPort -u$dbUsername -p${dbDecryptPassword} $appdbName <<EOFMYSQL
 
@@ -41,12 +41,13 @@ insert into sys_param (description, tag, value, feature_name,type,active,remark,
 
 insert into sys_param (description, tag, value, feature_name,type,active,remark,user_type,modified_by) values( 'The tag is used to store the token for downloading the ip location dump files.', 'ipLocationURLKey', 'RBq0UtKeLBmZrQeaLwBLjTzhGTVtqqzvjp7idqG4UYNMGgKcSCeNCwvIFHUnjP4d', 'Ip Location', 0,1,'','','');
 
-insert into cfg_feature_alert (alert_id, description, feature) values ('alert2142', 'The DB configuration is missing.', 'Ip Location Processor');
-insert into cfg_feature_alert (alert_id, description, feature) values ('alert2143', 'The values for either IP Location Processor dump file url or IP Location Processor url key is missing in database <e>', 'Ip Location Processor');
-insert into cfg_feature_alert (alert_id, description, feature) values ('alert2144', 'The file downloading failed for  <e>.', 'Ip Location Processor');
-insert into cfg_feature_alert (alert_id, description, feature) values ('alert2145', 'The file downloading was incomplete for <e>.', 'Ip Location Processor');
-insert into cfg_feature_alert (alert_id, description, feature) values ('alert2146', 'The dump file is not found for <e>.', 'Ip Location Processor');
-insert into cfg_feature_alert (alert_id, description, feature) values ('alert2147', 'The java process did not complete successfully for file <e> for <process_name>.', 'Ip Location Processor');
-insert into cfg_feature_alert (alert_id, description, feature) values ('alert2148', 'The previous processed file <process_name> does not exists on the server for <e>.', 'Ip Location Processor');
+insert into cfg_feature_alert (alert_id, description, feature) values ('alert2142', 'The DB configuration is missing.', 'Ip Location');
+insert into cfg_feature_alert (alert_id, description, feature) values ('alert2143', 'The values for either IP Location Processor dump file url or IP Location Processor url key is missing in database <e>', 'Ip Location');
+insert into cfg_feature_alert (alert_id, description, feature) values ('alert2144', 'The file downloading failed for  <e>.', 'Ip Location');
+insert into cfg_feature_alert (alert_id, description, feature) values ('alert2145', 'The file downloading was incomplete for <e>.', 'Ip Location');
+insert into cfg_feature_alert (alert_id, description, feature) values ('alert2146', 'The dump file is not found for <e>.', 'Ip Location');
+insert into cfg_feature_alert (alert_id, description, feature) values ('alert2147', 'The java process did not complete successfully for file <e> for <process_name>.', 'Ip Location');
+insert into cfg_feature_alert (alert_id, description, feature) values ('alert2148', 'The previous processed file <process_name> does not exists on the server for <e>.', 'Ip Location');
+
 
 EOFMYSQL
