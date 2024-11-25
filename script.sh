@@ -146,9 +146,7 @@ EOFMYSQL
     source /home/eirsapp/.bash_profile  > /dev/null   
     . script.properties  > /dev/null
 
-    commonConfiguration=$commonConfigurationFilePath  > /dev/null
-    source $commonConfigurationFilePath 1>/dev/null 2>/dev/null
-
+    source $commonConfigurationFile 1>/dev/null 2>/dev/null
 
     ipType=$1
     
