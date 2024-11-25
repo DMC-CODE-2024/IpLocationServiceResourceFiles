@@ -40,7 +40,7 @@ insert ignore into  sys_param (description, tag, value, feature_name,type,active
 
 insert ignore into   cfg_feature_alert (alert_id, description, feature) values ('alert2142', 'The DB configuration is missing.', 'Ip Location');
 insert ignore into  cfg_feature_alert (alert_id, description, feature) values ('alert2143', 'The values for either IP Location Processor dump file url or IP Location Processor url key is missing in database <e>', 'Ip Location');
-insert ignoreinto   cfg_feature_alert (alert_id, description, feature) values ('alert2144', 'The file downloading failed for  <e>.', 'Ip Location');
+insert ignore into   cfg_feature_alert (alert_id, description, feature) values ('alert2144', 'The file downloading failed for  <e>.', 'Ip Location');
 insert ignore into   cfg_feature_alert (alert_id, description, feature) values ('alert2145', 'The file downloading was incomplete for <e>.', 'Ip Location');
 insert ignore into   cfg_feature_alert (alert_id, description, feature) values ('alert2146', 'The dump file is not found for <e>.', 'Ip Location');
 insert ignore into   cfg_feature_alert (alert_id, description, feature) values ('alert2147', 'The java process did not complete successfully for file <e> for <process_name>.', 'Ip Location');
