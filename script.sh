@@ -1,5 +1,5 @@
 #!/bin/bash
- 
+set -x 
 main_module="" #keep it empty "" if there is no main module 
 module_name="ip_location"
 log_level="INFO" # INFO, DEBUG, ERROR
